@@ -20,7 +20,7 @@
 				<view class="content" style="height: 170upx;width: 70%;" v-on:click="clickHandler(item)">
 					<view class="text-grey">{{ item.name }}</view>
 					<view class="text-gray text-sm">
-						<view class="list-prop-item" v-for="(prop, pi) in item.data" :key="pi" v-if="pi < 6">
+						<view class="list-prop-item" v-for="(prop, pi) in item.data" :key="pi" v-if="pi < 3">
 							<text :class="'margin-right-xs cuIcon-' + icon(prop.icon) + ' text-' + iconColor(prop.icolor)"></text>
 							<text>{{ prop.name }}：</text>
 							<text>{{ prop.value }}</text>
@@ -96,7 +96,7 @@ export default {
 	height: 160upx;
 }
 .list-prop-item {
-	width: 50%;
+	width: 100%;
 	display: inline-block;
 }
 </style>

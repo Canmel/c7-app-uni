@@ -50,7 +50,39 @@
 		"style": {
 			"navigationBarTitleText": "个人信息"
 		}
-	}],
+	}    ,{
+            "path" : "pages/manage/user/user",
+            "style" : {
+				"navigationBarTitleText": "用户管理",
+				"enablePullDownRefresh": true
+			}
+        }
+        ,{
+            "path" : "pages/manage/role/role",
+            "style" : {
+				"navigationBarTitleText": "角色管理",
+				"enablePullDownRefresh": true
+			}
+        }
+        ,{
+            "path" : "pages/manage/menu/menu",
+            "style" : {
+				"navigationBarTitleText": "菜单管理",
+				"enablePullDownRefresh": true
+			}
+        }
+        ,{
+            "path" : "pages/manage/log/log",
+            "style" : {
+				"navigationBarTitleText": "日志管理",
+				"enablePullDownRefresh": true
+			}
+        }
+        ,{
+            "path" : "pages/manage/user/detail/detail",
+            "style" : {}
+        }
+    ],
 	"tabBar": {
 		"color": "#7a7e83",
 		"selectedColor": "#0faeff",
@@ -72,7 +104,7 @@
 			"selectedIconPath": "static/img/templateHL.png"
 		}, {
 			"pagePath": "pages/tabBar/manage/manage",
-			"text": "管理",
+			"text": "系统管理",
 			"iconPath": "static/img/user.png",
 			"selectedIconPath": "static/img/userHL.png"
 		}]

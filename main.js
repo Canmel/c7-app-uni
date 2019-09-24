@@ -8,12 +8,17 @@ Vue.config.productionTip = false
 Vue.prototype.$store = store
 
 import cuCustom from './colorui/components/cu-custom.vue'
-Vue.component('cu-custom',cuCustom)
+import { http }  from '@/utils/luch-request/index.js'
+
+Vue.component('cu-custom', cuCustom)
+
+Vue.prototype.$http = http
+Vue.config.productionTip = false
 
 App.mpType = 'app'
 
 const app = new Vue({
-    store,
-    ...App
+	store,
+	...App
 })
 app.$mount()

@@ -1,8 +1,8 @@
 <template>
-	<view>
+	<view class="full">
 		<cu-custom bgColor="bg-gradual-master">
 			<block slot="right"><navigator class="lg cuIcon-peoplefill" url="../../profile/profile" style="font-size: 50upx;"></navigator></block>
-			<block slot="content">管理</block>
+			<block slot="content">系统管理</block>
 			<block slot="right"><navigator class="lg cuIcon-notice" style="right: 20upx; font-size: 50upx;" url="../../warning/warning"></navigator></block>
 		</cu-custom>
 		<scroll-view scroll-y class="page">
@@ -32,42 +32,30 @@ export default {
 	data() {
 		return {
 			elements: [
-				// {
-				// 	title: '借调申请',
-				// 	name: 'transfer',
-				// 	color: 'cyan',
-				// 	cuIcon: 'forward'
-				// },
-				// {
-				// 	title: '报废申请',
-				// 	name: 'scrap',
-				// 	color: 'blue',
-				// 	cuIcon: 'warn'
-				// },
-				// {
-				// 	title: '评价管理',
-				// 	name: 'evaluate',
-				// 	color: 'purple',
-				// 	cuIcon: 'favor'
-				// },
-				// {
-				// 	title: '培训教程查看 ',
-				// 	name: 'read-course',
-				// 	color: 'mauve',
-				// 	cuIcon: 'newshot'
-				// },
-				// {
-				// 	title: '培训教程管理',
-				// 	name: 'course',
-				// 	color: 'pink',
-				// 	cuIcon: 'calendar'
-				// },
-				// {
-				// 	title: '出库管理',
-				// 	name: 'out',
-				// 	color: 'brown',
-				// 	cuIcon: 'repeal'
-				// },
+				{
+					title: '用户管理',
+					name: 'user',
+					color: 'cyan',
+					cuIcon: 'friendadd'
+				},
+				{
+					title: '角色管理',
+					name: 'role',
+					color: 'blue',
+					cuIcon: 'friend'
+				},
+				{
+					title: '菜单管理',
+					name: 'menu',
+					color: 'purple',
+					cuIcon: 'read'
+				},
+				{
+					title: '日志管理',
+					name: 'log',
+					color: 'brown',
+					cuIcon: 'edit'
+				}
 				// {
 				// 	title: '入库管理',
 				// 	name: 'in',
