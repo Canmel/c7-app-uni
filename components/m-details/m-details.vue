@@ -6,7 +6,7 @@
 					{{formData.name}}
 				</view>
 				<view class="padding-xs text-lg">
-					{{formData.desc}}
+					{{formData.desc ? formData.desc : '' }}
 				</view>
 			</view>
 		</view>
@@ -19,7 +19,7 @@
 				</view>
 				<view class="cu-form-group" v-for="(item, index) in formData.data" :key="index">
 					<view class="title">{{item.name}}</view>
-					<input placeholder="" name="input" :value="item.value" disabled="true"></input>
+					<input placeholder="" name="input" :value="getValue(item)" disabled="true"></input>
 				</view>
 				<view class="padding flex flex-direction">
 					<button class="cu-btn bg-blue margin-tb-sm lg" @click="back()">确认</button>
@@ -38,6 +38,9 @@
 			}
 		},
 		methods: {
+			getValue(v) {
+				return (v.value === null || v.value === 'null') ? '未知' : v.value;
+			},
 			onClick() {
 				this.$emit('click')
 			},

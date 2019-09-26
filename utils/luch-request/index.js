@@ -25,10 +25,8 @@ test.interceptor.request((config, cancel) => { /* 请求之前拦截器 */
 })
 
 test.interceptor.response((response) => { /* 请求之后拦截器 */
-	console.log(response);
 	return response
 }, (response) => { // 请求错误做点什么
-	console.log(response);
 	return response
 })
 
@@ -51,31 +49,34 @@ http.interceptor.request((config, cancel) => { /* 请求之前拦截器 */
 	let token = null;
 
 	uni.getStorage({
-		key: 'token',
+		key: 'access_token',
 		success: function(resp) {
 			token = resp.data;
 		}
 	})
-	
-	
-	if (!token) { // 如果token不存在，调用cancel 会取消本次请求，但是该函数的catch() 仍会执行
-	  cancel('token 不存在') // 接收一个参数，会传给catch((err) => {}) err.errMsg === 'token 不存在'
-	  uni.navigateTo({
-	  	url: '../../login/login'
-	  })
+	if (token) {
+		config.params.access_token = token;
 	}
-	console.log(123123)
-	
+
+	console.log(config);
+	// if (!token) { // 如果token不存在，调用cancel 会取消本次请求，但是该函数的catch() 仍会执行
+	//   cancel('token 不存在') // 接收一个参数，会传给catch((err) => {}) err.errMsg === 'token 不存在'
+	//   // uni.navigateTo({
+	//   // 	url: '../../login/login'
+	//   // })
+	// }
+
 	return config
 })
 
 http.interceptor.response((response) => { /* 请求之后拦截器 */
-	console.log(response);
 	return response
 }, (response) => { // 请求错误做点什么
-	console.log(response);
 	uni.navigateTo({
-		url: '../../login/login'
+		url: '../../login/login',
+		success: (resp) => {
+			uni.clearStorage()
+		}
 	})
 	return response
 })

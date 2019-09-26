@@ -1,7 +1,18 @@
 <script>
 import Vue from 'vue';
 export default {
+	data() {
+		return {
+			title: 'push',
+			provider: [],
+			pushServer: 'http://demo.dcloud.net.cn/push/?',
+			tranMsg: ''
+		};
+	},
 	onLaunch: function() {
+		console.log(1);
+		this.openPush();
+
 		uni.getSystemInfo({
 			success: function(e) {
 				// #ifndef MP
@@ -28,10 +39,55 @@ export default {
 		// plus.screen.lockOrientation('portrait-primary');
 	},
 	onShow: function() {
-		console.log('App Show');
+		console.log('App Show2');
 	},
 	onHide: function() {
 		console.log('App Hide');
+	},
+	onLoad() {
+		console.log(3);
+		uni.getProvider({
+			service: 'push',
+			success: e => {
+				console.log('success', e);
+				this.provider = e.provider;
+			},
+			fail: e => {
+				console.log('获取推送通道失败', e);
+			}
+		});
+	},
+	methods: {
+		openPush() {
+			uni.subscribePush({
+				provider: this.provider[0],
+				success: e => {
+					uni.showToast({
+						title: '已开启push接收'
+					});
+					this.listenTranMsg();
+				}
+			});
+		},
+		listenTranMsg() {
+			var inf = plus.push.getClientInfo();
+			console.log(inf);
+			uni.onPush({
+				provider: this.provider[0],
+				success: e => {
+					uni.showToast({
+						title: '开始监听透传数据'
+					});
+				},
+				callback: e => {
+					uni.showToast({
+						title: '接收到透传数据'
+					});
+
+					this.tranMsg = JSON.stringify(e.data);
+				}
+			});
+		}
 	}
 };
 </script>
@@ -301,5 +357,4 @@ uni-page-body > uni-view {
 .full {
 	width: 100%;
 }
-
 </style>

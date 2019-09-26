@@ -80,7 +80,10 @@
         }
         ,{
             "path" : "pages/manage/user/detail/detail",
-            "style" : {}
+            "style" : {
+				"navigationBarTitleText": "用户详情",
+				"enablePullDownRefresh": true
+			}
         }
     ],
 	"tabBar": {
