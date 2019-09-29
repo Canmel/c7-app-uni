@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="bg-img bg-mask flex align-center" :style="[{ backgroundImage: 'url(' + imageUrl(formData.image) + ')', 'background-color': '#f1f1f1' }]">
+		<view class="bg-img bg-mask flex align-center" :style="[{ backgroundImage: 'url(' + imageUrl(formData.image) + ')', 'background-color': '#f1f1f1', 'min-height': '300upx' }]">
 			<view class="padding-xl text-white">
 				<view class="padding-xs text-xxl text-bold">
 					{{formData.name}}

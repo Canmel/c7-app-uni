@@ -50,42 +50,49 @@
 		"style": {
 			"navigationBarTitleText": "个人信息"
 		}
-	}    ,{
-            "path" : "pages/manage/user/user",
-            "style" : {
-				"navigationBarTitleText": "用户管理",
-				"enablePullDownRefresh": true
-			}
-        }
-        ,{
-            "path" : "pages/manage/role/role",
-            "style" : {
-				"navigationBarTitleText": "角色管理",
-				"enablePullDownRefresh": true
-			}
-        }
-        ,{
-            "path" : "pages/manage/menu/menu",
-            "style" : {
-				"navigationBarTitleText": "菜单管理",
-				"enablePullDownRefresh": true
-			}
-        }
-        ,{
-            "path" : "pages/manage/log/log",
-            "style" : {
-				"navigationBarTitleText": "日志管理",
-				"enablePullDownRefresh": true
-			}
-        }
-        ,{
-            "path" : "pages/manage/user/detail/detail",
-            "style" : {
-				"navigationBarTitleText": "用户详情",
-				"enablePullDownRefresh": true
-			}
-        }
-    ],
+	}, {
+		"path": "pages/manage/role/role",
+		"style": {
+			"navigationBarTitleText": "角色管理",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/manage/user/user",
+		"style": {
+			"navigationBarTitleText": "用户管理",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/manage/menu/menu",
+		"style": {
+			"navigationBarTitleText": "菜单管理",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/manage/log/log",
+		"style": {
+			"navigationBarTitleText": "日志管理",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/manage/user/detail/detail",
+		"style": {
+			"navigationBarTitleText": "用户详情",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/manage/role/detail/detail",
+		"style": {
+			"navigationBarTitleText": "角色详情",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/manage/menu/detail/detail",
+		"style": {
+			"navigationBarTitleText": "菜单详情",
+			"enablePullDownRefresh": true
+		}
+	}],
 	"tabBar": {
 		"color": "#7a7e83",
 		"selectedColor": "#0faeff",
@@ -114,7 +121,7 @@
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarBackgroundColor": "#01c0c8",
-		"backgroundColor": "#01c0c8"
+		"navigationBarBackgroundColor": "rgb(144, 144, 144)",
+		"backgroundColor": "rgb(144, 144, 144)"
 	}
 }

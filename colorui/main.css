@@ -3579,7 +3579,7 @@ scroll-view.cu-steps .cu-item {
 }
 
 .bg-gradual-master {
-	background-color: #01c0c8;
+	background-color: rgb(144, 144, 144);
 	color: #ffffff;
 }
 

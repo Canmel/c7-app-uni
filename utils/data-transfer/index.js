@@ -3,7 +3,6 @@ transfer.usersTransfer = function(data, base, formate, tag) {
 	const result = [];
 	if (data && data.length > 0) {
 		data.forEach(function(value, index) {
-			console.log(value, index);
 			const item = {};
 			item.data = [];
 			for (let key in formate) {
@@ -16,7 +15,6 @@ transfer.usersTransfer = function(data, base, formate, tag) {
 				item[key] = value[base[key]]
 			}
 			// tag
-			console.log(tag.name);
 			if(tag) {
 				item.tags = [];
 				if(value[tag.name] === '0' || value[tag.name] === 0) {
