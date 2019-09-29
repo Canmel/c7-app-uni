@@ -96,7 +96,7 @@ export default {
 			});
 		},
 		transferData(data) {
-			this.mData = this.$transfer.usersTransfer(
+			this.mData = this.$transfer.commonTransfer(
 				data,
 				{ name: 'username' },
 				{

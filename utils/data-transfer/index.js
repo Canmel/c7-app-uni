@@ -1,5 +1,5 @@
 const transfer = {};
-transfer.usersTransfer = function(data, base, formate, tag) {
+transfer.commonTransfer = function(data, base, formate, tag) {
 	const result = [];
 	if (data && data.length > 0) {
 		data.forEach(function(value, index) {
@@ -15,20 +15,22 @@ transfer.usersTransfer = function(data, base, formate, tag) {
 				item[key] = value[base[key]]
 			}
 			// tag
-			if(tag) {
+			if (tag) {
 				item.tags = [];
-				if(value[tag.name] === '0' || value[tag.name] === 0) {
+				if (value[tag.name] === '0' || value[tag.name] === 0) {
 					item.tags.push({
-						name: '移除', color: 'red'
+						name: '移除',
+						color: 'red'
 					})
 				}
-				if(value[tag.name] === '1' || value[tag.name] === 1) {
+				if (value[tag.name] === '1' || value[tag.name] === 1) {
 					item.tags.push({
-						name: '正常', color: 'green'
+						name: '正常',
+						color: 'green'
 					})
 				}
 			}
-			
+
 			item.options = [{
 				name: '编辑',
 				method: 'details',
@@ -38,6 +40,10 @@ transfer.usersTransfer = function(data, base, formate, tag) {
 				method: 'delete',
 				color: 'red'
 			}];
+			if (value['remark']) {
+				item.desc = value['remark'];
+			}
+
 			result.push(item);
 		});
 	}

@@ -71,12 +71,12 @@ http.interceptor.request((config, cancel) => { /* 请求之前拦截器 */
 http.interceptor.response((response) => { /* 请求之后拦截器 */
 	return response
 }, (response) => { // 请求错误做点什么
-	uni.navigateTo({
-		url: '../../login/login',
-		success: (resp) => {
-			uni.clearStorage()
-		}
-	})
+	// uni.navigateTo({
+	// 	url: '../../login/login',
+	// 	success: (resp) => {
+	// 		uni.clearStorage()
+	// 	}
+	// })
 	return response
 })
 

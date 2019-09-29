@@ -3,7 +3,7 @@
 		<view class="cu-bar search bg-white" style="width: 100%;">
 			<zy-search style="width: 100%;" :is-focus="false" :is-block="false" :show-want="true" @showbox="toshow" @search="search"></zy-search>
 		</view>
-		<!-- <mTextList :datas="mData" @handler="optHandler" v-if="isShowIndexPage" option="true" @click="itemClick"></mTextList> -->
+		<mTextList :datas="mData" @handler="optHandler" v-if="isShowIndexPage" option="true" @click="itemClick"></mTextList>
 
 		<view class="uni-loadmore" v-if="isShowIndexPage && showLoadMore">{{ loadMoreText }}</view>
 	</view>
@@ -96,27 +96,19 @@ export default {
 			});
 		},
 		transferData(data) {
-			this.mData = this.$transfer.usersTransfer(
+			this.mData = this.$transfer.commonTransfer(
 				data,
-				{ name: 'username' },
+				{ name: 'roleName' },
 				{
-					username: '用户名',
-					nickname: '昵称',
-					email: '邮箱',
-					status: '状态',
-					mobile: '手机',
-					age: '年龄',
-					gender: '性别',
-					orgName: '部门',
-					address: '坐标',
-					remark: '个性签名'
+					roleName: '角色名称',
+					remark: '备注'
 				},
 				{ name: 'status' }
 			);
 		},
 		loadListData() {
 			this.$http
-				.get('system/sysUser', {})
+				.get('system/sysRole', {})
 				.then(res => {
 					console.log(res);
 					const pageData = res.data;
