@@ -63,7 +63,6 @@ export default {
 			success: resp => {
 				this.formData = resp.data;
 				this.content = this.formData.content;
-				console.log(this.formData);
 				delete this.formData.content;
 				
 			}
