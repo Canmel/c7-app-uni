@@ -92,6 +92,12 @@
 			"navigationBarTitleText": "菜单详情",
 			"enablePullDownRefresh": true
 		}
+	}, {
+		"path": "pages/manage/log/detail/detail",
+		"style": {
+			"navigationBarTitleText": "日志详情",
+			"enablePullDownRefresh": true
+		}
 	}],
 	"tabBar": {
 		"color": "#7a7e83",

@@ -22,20 +22,24 @@ export default {
 			showLoadMore: false,
 			loadMoreText: '加载中...',
 			max: 0,
+			pageNum: 1,
+			totalNum: 0,
 			isShowIndexPage: true,
 			mData: []
 		};
 	},
 	onPullDownRefresh() {
-		this.initData();
+		this.pageNum = 1;
+		this.mData = [];
+		this.loadListData();
 		uni.stopPullDownRefresh();
 	},
 	onReachBottom: function() {
-		if (this.mData.length > 1000) {
+		if (this.mData.length >= this.totalNum) {
 			this.loadMoreText = '没有更多数据了!';
 			return;
 		}
-
+		this.pageNum++;
 		this.showLoadMore = true;
 		this.loadListData();
 	},
@@ -47,12 +51,6 @@ export default {
 			});
 			uni.navigateTo({
 				url: 'detail/detail'
-			});
-		},
-		searchFilter() {
-			uni.showModal({
-				content: '打开filter',
-				showCancel: false
 			});
 		},
 		optHandler(resp) {
@@ -69,9 +67,6 @@ export default {
 					url: 'details/details'
 				});
 			}
-		},
-		initData() {
-			this.loadListData();
 		},
 		setData() {
 			this.mData.push({
@@ -96,31 +91,28 @@ export default {
 			});
 		},
 		transferData(data) {
-			this.mData = this.$transfer.usersTransfer(
+			return this.$transfer.commonTransfer(
 				data,
-				{ name: 'username' },
+				{ name: 'name' },
 				{
-					username: '用户名',
-					nickname: '昵称',
-					email: '邮箱',
+					name: '菜单名称',
+					url: '地址',
+					gmtCreate: '创建时间',
 					status: '状态',
-					mobile: '手机',
-					age: '年龄',
-					gender: '性别',
-					orgName: '部门',
-					address: '坐标',
-					remark: '个性签名'
+					menuId: '菜单ID'
 				},
 				{ name: 'status' }
 			);
 		},
 		loadListData() {
 			this.$http
-				.get('system/sysUser', {})
+				.get('system/sysMenu', { params: { pageNum: this.pageNum } })
 				.then(res => {
 					console.log(res);
 					const pageData = res.data;
-					this.transferData(pageData.data.list);
+					this.totalNum = pageData.data.total;
+					console.log(this.transferData(pageData.data.list));
+					this.mData = this.mData.concat(this.transferData(pageData.data.list));
 				})
 				.catch(res => {
 					console.log(res);

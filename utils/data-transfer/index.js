@@ -1,5 +1,5 @@
 const transfer = {};
-transfer.commonTransfer = function(data, base, formate, tag) {
+transfer.commonTransfer = function(data, base, formate, tag, options) {
 	const result = [];
 	if (data && data.length > 0) {
 		data.forEach(function(value, index) {
@@ -30,16 +30,11 @@ transfer.commonTransfer = function(data, base, formate, tag) {
 					})
 				}
 			}
-
-			item.options = [{
-				name: '编辑',
-				method: 'details',
-				color: 'gray'
-			}, {
-				name: '删除',
-				method: 'delete',
-				color: 'red'
-			}];
+			
+			if(options) {
+				item.options = options;
+			}
+			
 			if (value['remark']) {
 				item.desc = value['remark'];
 			}

@@ -48,6 +48,7 @@ http.interceptor.request((config, cancel) => { /* 请求之前拦截器 */
 	}
 	let token = null;
 
+	console.log(config)
 	uni.getStorage({
 		key: 'access_token',
 		success: function(resp) {

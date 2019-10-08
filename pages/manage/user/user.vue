@@ -22,20 +22,24 @@ export default {
 			showLoadMore: false,
 			loadMoreText: '加载中...',
 			max: 0,
+			pageNum: 1,
+			totalNum: 0,
 			isShowIndexPage: true,
 			mData: []
 		};
 	},
 	onPullDownRefresh() {
-		this.initData();
+		this.pageNum = 1;
+		this.mData = [];
+		this.loadListData();
 		uni.stopPullDownRefresh();
 	},
 	onReachBottom: function() {
-		if (this.mData.length > 1000) {
+		if (this.mData.length >= this.totalNum) {
 			this.loadMoreText = '没有更多数据了!';
 			return;
 		}
-
+		this.pageNum++;
 		this.showLoadMore = true;
 		this.loadListData();
 	},
@@ -47,12 +51,6 @@ export default {
 			});
 			uni.navigateTo({
 				url: 'detail/detail'
-			});
-		},
-		searchFilter() {
-			uni.showModal({
-				content: '打开filter',
-				showCancel: false
 			});
 		},
 		optHandler(resp) {
@@ -70,22 +68,6 @@ export default {
 				});
 			}
 		},
-		initData() {
-			this.loadListData();
-		},
-		setData() {
-			this.mData.push({
-				name: '手提式强光巡检工作灯',
-				data: [
-					{ name: '登记总数', value: '12', icolor: 'green' },
-					{ name: '超期未检', value: '1', icon: 'search', icolor: 'yellow' },
-					{ name: '在库', value: '11' },
-					{ name: '试验到期', value: '0' },
-					{ name: '离枯', value: '1' },
-					{ name: '超期服役', value: '3', icolor: 'red' }
-				]
-			});
-		},
 		toshow(isF) {
 			this.isShowIndexPage = isF;
 		},
@@ -96,7 +78,7 @@ export default {
 			});
 		},
 		transferData(data) {
-			this.mData = this.$transfer.commonTransfer(
+			return this.$transfer.commonTransfer(
 				data,
 				{ name: 'username' },
 				{
@@ -118,9 +100,9 @@ export default {
 			this.$http
 				.get('system/sysUser', {})
 				.then(res => {
-					console.log(res);
 					const pageData = res.data;
-					this.transferData(pageData.data.list);
+					this.totalNum = pageData.data.total;
+					this.mData = this.mData.concat(this.transferData(pageData.data.list));
 				})
 				.catch(res => {
 					console.log(res);
