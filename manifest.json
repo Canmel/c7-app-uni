@@ -56,22 +56,22 @@
             },
             "splashscreen" : {
                 "android" : {
-                    "xhdpi" : "/Users/baily/Downloads/splash.png",
-                    "xxhdpi" : "/Users/baily/Downloads/splash.png",
-                    "hdpi" : "/Users/baily/Downloads/splash.png"
+                    "xhdpi" : "",
+                    "xxhdpi" : "",
+                    "hdpi" : ""
                 },
                 "ios" : {
                     "iphone" : {
-                        "portrait-896h@3x" : "/Users/baily/Downloads/splash.png",
-                        "landscape-896h@3x" : "/Users/baily/Downloads/splash.png",
-                        "portrait-896h@2x" : "/Users/baily/Downloads/splash.png",
-                        "landscape-896h@2x" : "/Users/baily/Downloads/splash.png",
-                        "iphonex" : "/Users/baily/Downloads/splash.png",
-                        "iphonexl" : "/Users/baily/Downloads/splash.png",
-                        "retina55" : "/Users/baily/Downloads/splash.png",
-                        "retina55l" : "/Users/baily/Downloads/splash.png",
-                        "retina47" : "/Users/baily/Downloads/splash.png",
-                        "retina47l" : "/Users/baily/Downloads/splash.png"
+                        "portrait-896h@3x" : "",
+                        "landscape-896h@3x" : "",
+                        "portrait-896h@2x" : "",
+                        "landscape-896h@2x" : "",
+                        "iphonex" : "",
+                        "iphonexl" : "",
+                        "retina55" : "",
+                        "retina55l" : "",
+                        "retina47" : "",
+                        "retina47l" : ""
                     }
                 }
             }

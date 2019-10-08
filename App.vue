@@ -80,11 +80,12 @@ export default {
 					});
 				},
 				callback: e => {
-					uni.showToast({
-						title: '接收到透传数据'
-					});
-
 					this.tranMsg = JSON.stringify(e.data);
+					uni.setStorage({
+						key: "AppPushMessage",
+						data: e
+					})
+					uni.navigateTo({ url: 'pages/warning/warning' });
 				}
 			});
 		}
