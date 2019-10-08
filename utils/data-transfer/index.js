@@ -12,7 +12,7 @@ transfer.commonTransfer = function(data, base, formate, tag, options) {
 				item.data.push(itemData);
 			}
 			for (let key in base) {
-				item[key] = value[base[key]]
+				item[key] = value[base[key]];
 			}
 			// tag
 			if (tag) {

@@ -74,10 +74,8 @@ export default {
 			this.isShowIndexPage = isF;
 		},
 		search(text) {
-			uni.showModal({
-				content: text,
-				showCancel: false
-			});
+			this.mData = [];
+			this.loadListData(text);
 		},
 		transferData(data) {
 			return this.$transfer.commonTransfer(
@@ -90,9 +88,9 @@ export default {
 				{ name: 'status' }
 			);
 		},
-		loadListData() {
+		loadListData(text) {
 			this.$http
-				.get('system/sysRole', {})
+				.get('system/sysRole', {params: {roleName: text ? text: '', pageNum: this.pageNum}})
 				.then(res => {
 					const pageData = res.data;
 					this.totalNum = pageData.data.total;

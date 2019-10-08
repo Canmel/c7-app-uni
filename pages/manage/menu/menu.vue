@@ -85,10 +85,8 @@ export default {
 			this.isShowIndexPage = isF;
 		},
 		search(text) {
-			uni.showModal({
-				content: text,
-				showCancel: false
-			});
+			this.mData = [];
+			this.loadListData(text);
 		},
 		transferData(data) {
 			return this.$transfer.commonTransfer(
@@ -104,9 +102,9 @@ export default {
 				{ name: 'status' }
 			);
 		},
-		loadListData() {
+		loadListData(text) {
 			this.$http
-				.get('system/sysMenu', { params: { pageNum: this.pageNum } })
+				.get('system/sysMenu', {params: {name: text ? text: '', pageNum: this.pageNum}})
 				.then(res => {
 					console.log(res);
 					const pageData = res.data;

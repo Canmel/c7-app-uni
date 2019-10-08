@@ -43,7 +43,7 @@
 	}, {
 		"path": "pages/warning/warning",
 		"style": {
-			"navigationBarTitleText": "告警信息"
+			"navigationBarTitleText": "通知信息"
 		}
 	}, {
 		"path": "pages/profile/profile",
@@ -98,6 +98,12 @@
 			"navigationBarTitleText": "日志详情",
 			"enablePullDownRefresh": true
 		}
+	}, {
+		"path": "pages/warning/detail/detail",
+		"style": {
+			"navigationBarTitleText": "通知详情",
+			"enablePullDownRefresh": true
+		}
 	}],
 	"tabBar": {
 		"color": "#7a7e83",
@@ -127,7 +133,7 @@
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarBackgroundColor": "rgb(144, 144, 144)",
-		"backgroundColor": "rgb(144, 144, 144)"
+		"navigationBarBackgroundColor": "#0081ff",
+		"backgroundColor": "#0081ff"
 	}
 }

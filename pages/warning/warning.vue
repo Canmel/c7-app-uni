@@ -84,15 +84,21 @@
 				});
 			},
 			transferData(data) {
-				return this.$transfer.commonTransfer(
+				const s = this.$transfer.commonTransfer(
 					data,
-					{ name: 'roleName' },
+					{ name: 'title'},
 					{
-						roleName: '角色名称',
-						remark: '备注'
+						title: '通知标题',
+						remark: '通知备注',
+						createdAt: '发送时间',
+						content: '通知内容'
 					},
 					{ name: 'status' }
 				);
+				s.forEach(function(item){
+					item.image = 'static/img/drawable-xhdpi/panping_icon.png';
+				})
+				return s;
 			},
 			loadListData() {
 				this.$http

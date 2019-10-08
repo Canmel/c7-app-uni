@@ -23,19 +23,19 @@
 			<view class="baiban"></view>
 			<view class="center_menu">
 				<view class="menu_item">
-					<image src="../../static/img/profile/5.png" mode="aspectFill"></image>
+					<text class="lg text-gray cuIcon-edit"></text>
 					<text>修改密码</text>
 				</view>
 				<view class="menu_item">
-					<image src="../../static/img/profile/6.png" mode="aspectFill"></image>
+					<text class="lg text-gray cuIcon-subscription"></text>
 					<text>意见反馈</text>
 				</view>
 				<view class="menu_item" @click="toPage('../common/services/services')">
-					<image src="../../static/img/profile/7.png" mode="aspectFill"></image>
+					<text class="lg text-gray cuIcon-servicefill"></text>
 					<text>服务器设置</text>
 				</view>
 				<view class="menu_item">
-					<image src="../../static/img/profile/8.png" mode="aspectFill"></image>
+					<text class="lg text-gray cuIcon-questionfill"></text>
 					<text>关于</text>
 				</view>
 			</view>

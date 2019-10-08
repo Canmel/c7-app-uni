@@ -1,9 +1,9 @@
 <template>
 	<view>
 		<cu-custom bgColor="bg-gradual-master">
-			<block slot="right"><navigator class="lg cuIcon-peoplefill" url="../../profile/profile" style="font-size: 50upx;"></navigator></block>
+			<block slot="right"><navigator class="lg cuIcon-peoplefill" url="../../profile/profile" style="font-size: 50upx; margin-left: 20upx;"></navigator></block>
 			<block slot="content">统计分析</block>
-			<block slot="right"><navigator class="lg cuIcon-notice" style="right: 20upx; font-size: 50upx;" url="../../warning/warning"></navigator></block>
+			<block slot="right"><navigator class="lg cuIcon-notice" style="margin-right: 20upx; font-size: 50upx;" url="../../warning/warning"></navigator></block>
 		</cu-custom>
 		<scroll-view scroll-y class="page">
 			<view class="nav-list">

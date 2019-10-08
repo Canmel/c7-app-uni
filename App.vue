@@ -71,7 +71,6 @@ export default {
 		},
 		listenTranMsg() {
 			var inf = plus.push.getClientInfo();
-			console.log(inf);
 			uni.onPush({
 				provider: this.provider[0],
 				success: e => {
