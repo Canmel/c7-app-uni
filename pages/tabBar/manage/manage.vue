@@ -55,13 +55,13 @@ export default {
 					name: 'log',
 					color: 'brown',
 					cuIcon: 'edit'
+				},
+				{
+					title: '通用字典',
+					name: 'macros',
+					color: 'red',
+					cuIcon: 'deliver'
 				}
-				// {
-				// 	title: '入库管理',
-				// 	name: 'in',
-				// 	color: 'red',
-				// 	cuIcon: 'deliver'
-				// },
 				// {
 				// 	title: '盘点管理',
 				// 	name: 'inventory',

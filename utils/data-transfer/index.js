@@ -7,13 +7,36 @@ transfer.commonTransfer = function(data, base, formate, tag, options) {
 			item.data = [];
 			for (let key in formate) {
 				const itemData = {};
+				console.log(key);
+				if (key === 'createdAt') {
+					const date = new Date(value[key]);
+					const Y = date.getFullYear() + '-';
+					const M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+					const D = date.getDate() < 10 ? '0' + date.getDate() + ' ' : date.getDate() + ' ';
+					const h = date.getHours() < 10 ? '0' + date.getHours() + ':' : date.getHours() + ':';
+					const m = date.getMinutes() < 10 ? '0' + date.getMinutes() + ':' : date.getMinutes() + ':';
+					const s = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+					const sdata = Y + M + D + h + m + s;
+					itemData.value = sdata;
+					item.data.push(itemData);
+				} else if (key.indexOf('.') > -1) {
+					const tmpKey = key.split('.');
+					itemData.value = value[tmpKey[0]] ? value[tmpKey[0]][tmpKey[1]] : '';
+					item.data.push(itemData);
+				} else {
+					itemData.value = value[key];
+					item.data.push(itemData);
+				}
 				itemData.name = formate[key];
-				itemData.value = value[key];
-				item.data.push(itemData);
+
 			}
 			for (let key in base) {
 				item[key] = value[base[key]];
 			}
+			if(base['image']) {
+				item['image'] = base['image']
+			}
+			console.log(item);
 			// tag
 			if (tag) {
 				item.tags = [];
@@ -30,14 +53,15 @@ transfer.commonTransfer = function(data, base, formate, tag, options) {
 					})
 				}
 			}
-			
-			if(options) {
+
+			if (options) {
 				item.options = options;
 			}
-			
+
 			if (value['remark']) {
 				item.desc = value['remark'];
 			}
+			console.log()
 
 			result.push(item);
 		});

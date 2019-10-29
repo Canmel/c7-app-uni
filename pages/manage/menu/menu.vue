@@ -106,10 +106,8 @@ export default {
 			this.$http
 				.get('system/sysMenu', {params: {name: text ? text: '', pageNum: this.pageNum}})
 				.then(res => {
-					console.log(res);
 					const pageData = res.data;
 					this.totalNum = pageData.data.total;
-					console.log(this.transferData(pageData.data.list));
 					this.mData = this.mData.concat(this.transferData(pageData.data.list));
 				})
 				.catch(res => {

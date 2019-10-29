@@ -104,6 +104,54 @@
 			"navigationBarTitleText": "通知详情",
 			"enablePullDownRefresh": true
 		}
+	}, {
+		"path": "pages/manage/macros/macros",
+		"style": {
+			"navigationBarTitleText": "通用字典",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/manage/macros/detail/detail",
+		"style": {
+			"navigationBarTitleText": "字典详情",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/search/project/project",
+		"style": {
+			"navigationBarTitleText": "项目信息",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/search/project/detail/detail",
+		"style": {
+			"navigationBarTitleText": "项目详情",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/search/clue/clue",
+		"style": {
+			"navigationBarTitleText": "项目线索",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/search/clue/detail/detail",
+		"style": {
+			"navigationBarTitleText": "线索详情",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/search/ground/ground",
+		"style": {
+			"navigationBarTitleText": "地块信息",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/search/ground/detail/detail",
+		"style": {
+			"navigationBarTitleText": "地块详情",
+			"enablePullDownRefresh": true
+		}
 	}],
 	"tabBar": {
 		"color": "#7a7e83",

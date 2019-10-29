@@ -1,8 +1,8 @@
 <template>
 	<view class="content bg-white">
 		<view class="logo"><image src="../../static/logo.png" mode=""></image></view>
-		<view class="uni-form-item uni-column"><input type="tel" name="username" placeholder="请输入用户名" /></view>
-		<view class="uni-form-item uni-column"><input type="password" name="password" placeholder="请输入密码" /></view>
+		<view class="uni-form-item uni-column"><input type="tel" v-model="username" name="username" placeholder="请输入用户名" /></view>
+		<view class="uni-form-item uni-column"><input type="password" v-model="password" name="password" placeholder="请输入密码" /></view>
 		<button type="primary" style="width: 100%; border-radius: 10upx;" @click="doLogin()">登陆</button>
 		<view class="links">
 			<view @tap="gotoForgetPassword">忘记密码？</view>
@@ -15,7 +15,10 @@
 <script>
 export default {
 	data() {
-		return {};
+		return {
+			username: 'admin@camel.com',
+			password: '123456'
+		};
 	},
 	onLoad() {},
 	methods: {
@@ -31,7 +34,7 @@ export default {
 		doLogin: function() {
 			const that = this;
 			this.$http
-				.post('auth/oauth/token?grant_type=password&username=admin@camel.com&password=123456', {}, { header: { Authorization: 'Basic YW5kcm9pZDphbmRyb2lk' } })
+				.post('auth/oauth/token?grant_type=password&username='+ this.username +'&password=' + this.password, {}, { header: { Authorization: 'Basic YW5kcm9pZDphbmRyb2lk' } })
 				.then(res => {
 					uni.setStorage({
 						key: 'access_token',

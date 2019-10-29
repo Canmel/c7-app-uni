@@ -39,7 +39,10 @@
 		},
 		methods: {
 			getValue(v) {
-				return (v.value === null || v.value === 'null') ? '未知' : v.value;
+				if(v === null) {
+					return '未知';
+				}
+				return (v.value === null || v.value === 'null' || v.value === '') ? '未知' : v.value;
 			},
 			onClick() {
 				this.$emit('click')
