@@ -91,7 +91,7 @@ export default {
 		transferData(data) {
 			return this.$transfer.commonTransfer(
 				data,
-				{ name: 'name' },
+				{ name: 'name', image: 'static/img/drawable-xhdpi/menu.png' },
 				{
 					name: '菜单名称',
 					url: '地址',
@@ -104,7 +104,7 @@ export default {
 		},
 		loadListData(text) {
 			this.$http
-				.get('system/sysMenu', {params: {name: text ? text: '', pageNum: this.pageNum}})
+				.get('system/sysMenu', { params: { name: text ? text : '', pageNum: this.pageNum } })
 				.then(res => {
 					const pageData = res.data;
 					this.totalNum = pageData.data.total;

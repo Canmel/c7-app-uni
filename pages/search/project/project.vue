@@ -54,7 +54,6 @@ export default {
 			});
 		},
 		optHandler(resp) {
-
 			if (resp.method === 'delete') {
 				uni.showModal({
 					content: '删除',
@@ -78,7 +77,10 @@ export default {
 		transferData(data) {
 			return this.$transfer.commonTransfer(
 				data,
-				{ name: 'name' },
+				{
+					name: 'name',
+					image: 'static/img/drawable-xhdpi/project.png'
+				},
 				{
 					code: '项目编号',
 					business: '业务描述',
@@ -89,7 +91,7 @@ export default {
 		},
 		loadListData(text) {
 			this.$http
-				.get('oa/zsProject', { params: { operation: text ? text: '', pageNum: this.pageNum } })
+				.get('oa/zsProject', { params: { operation: text ? text : '', pageNum: this.pageNum } })
 				.then(res => {
 					const pageData = res.data;
 					this.totalNum = pageData.data.total;

@@ -78,7 +78,7 @@ export default {
 		transferData(data) {
 			return this.$transfer.commonTransfer(
 				data,
-				{ name: 'username' },
+				{ name: 'username', image: 'static/img/drawable-xhdpi/user.png' },
 				{
 					username: '用户名',
 					nickname: '昵称',
@@ -96,7 +96,7 @@ export default {
 		},
 		loadListData(text) {
 			this.$http
-				.get('system/sysUser', {params: {username: text ? text: '', pageNum: this.pageNum}})
+				.get('system/sysUser', { params: { username: text ? text : '', pageNum: this.pageNum } })
 				.then(res => {
 					const pageData = res.data;
 					this.totalNum = pageData.data.total;

@@ -78,7 +78,7 @@ export default {
 		transferData(data) {
 			return this.$transfer.commonTransfer(
 				data,
-				{ name: 'operation' },
+				{ name: 'operation', image: 'static/img/drawable-xhdpi/log.png' },
 				{
 					operation: '描述',
 					module: '模块',

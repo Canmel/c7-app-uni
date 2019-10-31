@@ -78,15 +78,15 @@ export default {
 			return this.$transfer.commonTransfer(
 				data,
 				{ name: 'name',
-				  image: 'static/img/drawable-xhdpi/ground.png'
+				  image: 'static/img/drawable-xhdpi/merchant.png'
 				}, {
-					areaName: '所属区域',
-					'rentable.name': '可租',
-					'saleable.name': '可售',
-					'industry.name': '所属行业',
-					'creator.username': '创建人',
-					periphery: '周边情况',
-					cooperation: '合作方式',
+					manager: '负责人',
+					mainBusiness: '主营业务',
+					contacts: '联系人',
+					contactsPhone: '联系人电话',
+					contactsPost: '联系人职务',
+					source: '来源地',
+					attribute: '商会属性',
 					createdAt: '创建时间'
 					
 				}
@@ -94,7 +94,7 @@ export default {
 		},
 		loadListData(text) {
 			this.$http
-				.get('oa/zsGround', { params: { operation: text ? text : '', pageNum: this.pageNum } })
+				.get('oa/zsMerchant', { params: { operation: text ? text : '', pageNum: this.pageNum } })
 				.then(res => {
 					const pageData = res.data;
 					this.totalNum = pageData.data.total;

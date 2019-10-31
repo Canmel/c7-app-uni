@@ -33,7 +33,7 @@ test.interceptor.response((response) => { /* 请求之后拦截器 */
 const http = new Request()
 
 http.setConfig((config) => { /* 设置全局配置 */
-	config.baseUrl = 'http://125.119.240.32:28080/' /* 根域名不同 */
+	config.baseUrl = 'http://l27512n380.wicp.vip:36028/' /* 根域名不同 */
 	return config
 })
 

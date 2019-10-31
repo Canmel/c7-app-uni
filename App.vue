@@ -62,9 +62,9 @@ export default {
 			uni.subscribePush({
 				provider: this.provider[0],
 				success: e => {
-					uni.showToast({
-						title: '已开启push接收'
-					});
+					// uni.showToast({
+					// 	title: '已开启push接收'
+					// });
 					this.listenTranMsg();
 				}
 			});

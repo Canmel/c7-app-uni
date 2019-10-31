@@ -7,7 +7,6 @@ transfer.commonTransfer = function(data, base, formate, tag, options) {
 			item.data = [];
 			for (let key in formate) {
 				const itemData = {};
-				console.log(key);
 				if (key === 'createdAt') {
 					const date = new Date(value[key]);
 					const Y = date.getFullYear() + '-';
@@ -36,7 +35,6 @@ transfer.commonTransfer = function(data, base, formate, tag, options) {
 			if(base['image']) {
 				item['image'] = base['image']
 			}
-			console.log(item);
 			// tag
 			if (tag) {
 				item.tags = [];
@@ -61,8 +59,6 @@ transfer.commonTransfer = function(data, base, formate, tag, options) {
 			if (value['remark']) {
 				item.desc = value['remark'];
 			}
-			console.log()
-
 			result.push(item);
 		});
 	}

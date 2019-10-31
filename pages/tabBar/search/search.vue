@@ -45,23 +45,29 @@ export default {
 					cuIcon: 'shopfill'
 				},
 				{
-					title: '项目线索',
+					title: '信息推荐',
+					name: 'recommend',
+					color: 'blue',
+					cuIcon: 'order'
+				},
+				{
+					title: '线索管理',
 					name: 'clue',
 					color: 'blue',
 					cuIcon: 'order'
 				},
 				{
-					title: '盘点查询',
-					name: 'inventory',
+					title: '人才管理',
+					name: 'talenteder',
 					color: 'purple',
 					cuIcon: 'list'
-				}
-				// {
-				// 	title: '人员出入查询 ',
-				// 	name: 'user-io',
-				// 	color: 'mauve',
-				// 	cuIcon: 'group_fill'
-				// },
+				},
+				{
+					title: '企业查询 ',
+					name: 'merchant',
+					color: 'mauve',
+					cuIcon: 'group_fill'
+				},
 				// {
 				// 	title: '工器具查询',
 				// 	name: 'toolequip',

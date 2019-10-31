@@ -80,7 +80,7 @@ export default {
 		transferData(data) {
 			return this.$transfer.commonTransfer(
 				data,
-				{ name: 'roleName' },
+				{ name: 'roleName', image: 'static/img/drawable-xhdpi/role.png' },
 				{
 					roleName: '角色名称',
 					remark: '备注'
