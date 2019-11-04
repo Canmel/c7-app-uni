@@ -161,26 +161,22 @@
 	}, {
 		"path": "pages/search/recommend/recommend",
 		"style": {
-			"navigationBarTitleText": "信息推荐",
-			"enablePullDownRefresh": true
+			"navigationBarTitleText": "信息推荐"
 		}
 	}, {
 		"path": "pages/search/add_merchant/add_merchant",
 		"style": {
-			"navigationBarTitleText": "客商推荐",
-			"enablePullDownRefresh": true
+			"navigationBarTitleText": "客商推荐"
 		}
 	}, {
 		"path": "pages/search/add_talenteder/add_talenteder",
 		"style": {
-			"navigationBarTitleText": "人才推荐",
-			"enablePullDownRefresh": true
+			"navigationBarTitleText": "人才推荐"
 		}
 	}, {
 		"path": "pages/search/add_project/add_project",
 		"style": {
-			"navigationBarTitleText": "项目推荐",
-			"enablePullDownRefresh": true
+			"navigationBarTitleText": "项目推荐"
 		}
 	}, {
 		"path": "pages/search/talenteder/talenteder",

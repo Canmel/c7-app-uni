@@ -14,7 +14,7 @@
 					<image src="../../static/img/profile/setting.png" mode=""></image>
 				</view>
 				<view class="order_status">
-					<view class="status" v-for="item in status">
+					<view class="status" v-for="item in status" v-bind:key="item">
 						<image class="icon" :src="item.url" mode="aspectFill"></image>
 						<text>{{ item.name }}</text>
 					</view>
