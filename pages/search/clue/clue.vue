@@ -100,7 +100,8 @@ export default {
 				});
 		}
 	},
-	onLoad() {
+	onShow() {
+		this.mData = [];
 		this.loadListData();
 	}
 };

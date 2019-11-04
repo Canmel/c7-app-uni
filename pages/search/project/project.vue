@@ -91,7 +91,7 @@ export default {
 		},
 		loadListData(text) {
 			this.$http
-				.get('oa/zsProject', { params: { operation: text ? text : '', pageNum: this.pageNum } })
+				.get('oa/zsProject', { params: { name: text ? text : '', pageNum: this.pageNum } })
 				.then(res => {
 					const pageData = res.data;
 					this.totalNum = pageData.data.total;
@@ -102,7 +102,8 @@ export default {
 				});
 		}
 	},
-	onLoad() {
+	onShow() {
+		this.mData = [];
 		this.loadListData();
 	}
 };

@@ -17,6 +17,10 @@ export default {
 		mTextList,
 		zySearch
 	},
+	onShow(){
+		this.mData = [];
+		this.loadListData();
+	},
 	data() {
 		return {
 			showLoadMore: false,
@@ -94,7 +98,7 @@ export default {
 		},
 		loadListData(text) {
 			this.$http
-				.get('oa/zsGround', { params: { operation: text ? text : '', pageNum: this.pageNum } })
+				.get('oa/zsGround', { params: { name: text ? text : '', pageNum: this.pageNum } })
 				.then(res => {
 					const pageData = res.data;
 					this.totalNum = pageData.data.total;
@@ -104,9 +108,6 @@ export default {
 					console.log(res);
 				});
 		}
-	},
-	onLoad() {
-		this.loadListData();
 	}
 };
 </script>

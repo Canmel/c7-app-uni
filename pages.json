@@ -153,6 +153,12 @@
 			"enablePullDownRefresh": true
 		}
 	}, {
+		"path": "pages/search/talenteder/detail/detail",
+		"style": {
+			"navigationBarTitleText": "地块详情",
+			"enablePullDownRefresh": true
+		}
+	}, {
 		"path": "pages/search/recommend/recommend",
 		"style": {
 			"navigationBarTitleText": "信息推荐",
