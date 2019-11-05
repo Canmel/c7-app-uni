@@ -208,14 +208,9 @@
 			"selectedIconPath": "static/img/homeHL.png"
 		}, {
 			"pagePath": "pages/tabBar/search/search",
-			"text": "实时查询",
+			"text": "招商管理",
 			"iconPath": "static/img/extuiIndex.png",
 			"selectedIconPath": "static/img/extuiHL.png"
-		}, {
-			"pagePath": "pages/tabBar/analysis/analysis",
-			"text": "统计分析",
-			"iconPath": "static/img/templateIndex.png",
-			"selectedIconPath": "static/img/templateHL.png"
 		}, {
 			"pagePath": "pages/tabBar/manage/manage",
 			"text": "系统管理",

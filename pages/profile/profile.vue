@@ -56,22 +56,22 @@ export default {
 			status: [
 				{
 					key: 1,
-					name: '待发货',
+					name: '状态1',
 					url: '../../static/img/profile/one.png'
 				},
 				{
 					key: 2,
-					name: '待收货',
+					name: '状态2',
 					url: '../../static/img/profile/2.png'
 				},
 				{
 					key: 3,
-					name: '待评价',
+					name: '状态3',
 					url: '../../static/img/profile/3.png'
 				},
 				{
 					key: 4,
-					name: '全部订单',
+					name: '状态4',
 					url: '../../static/img/profile/4.png'
 				}
 			]
