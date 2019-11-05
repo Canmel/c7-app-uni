@@ -46,6 +46,9 @@ http.interceptor.request((config, cancel) => { /* 请求之前拦截器 */
 		...config.header,
 		a: 1
 	}
+	uni.showLoading({
+	    title: '加载中...'
+	});
 	let token = null;
 	uni.getStorage({
 		key: 'access_token',
@@ -56,26 +59,30 @@ http.interceptor.request((config, cancel) => { /* 请求之前拦截器 */
 	if (token) {
 		config.params.access_token = token;
 	}
-	// if (!token) { // 如果token不存在，调用cancel 会取消本次请求，但是该函数的catch() 仍会执行
-	//   cancel('token 不存在') // 接收一个参数，会传给catch((err) => {}) err.errMsg === 'token 不存在'
-	//   // uni.navigateTo({
-	//   // 	url: '../../login/login'
-	//   // })
-	// }
-
 	return config
 })
 
 http.interceptor.response((response) => { /* 请求之后拦截器 */
-	return response
+	uni.hideLoading();
+	return response;
 }, (response) => { // 请求错误做点什么
-	console.log(response, '------>2');
-	uni.navigateTo({
-		url: '../../login/login',
-		success: (resp) => {
-			uni.clearStorage()
-		}
-	})
+	uni.hideLoading();
+	const pages = getCurrentPages();
+	const curPages = pages[pages.length - 1];
+	if(curPages.route === 'pages/login/login') {
+		uni.showToast({
+			image: '/static/img/drawable-xhdpi/out_checkdate_icon.png' ,
+			title: '用户信息不正确或已过期，请重新登录'
+		});
+	}else {
+		uni.navigateTo({
+			url: '../../pages/login/login',
+			success: (resp) => {
+				uni.clearStorage()
+			}
+		})
+	}
+	
 	return response
 })
 

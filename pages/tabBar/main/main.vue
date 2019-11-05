@@ -156,8 +156,8 @@ export default {
 			// Radar.series=res.data.data.Radar.series;
 			Radar.categories.push("完成", "盯引项目", "推介项目", "在建项目", "落地项目");
 			Radar.series.push({
-				"name": "生产工器具数",
-				"data": [97, 120, 79, 137]
+				"name": "项目状态",
+				"data": [97, 120, 79, 137, 100]
 			  }
 			 //  ,{
 				// "name": "安全工器具数",

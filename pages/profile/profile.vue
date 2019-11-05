@@ -87,7 +87,9 @@ export default {
 				confirmText: '残忍离开',
 				confirmColor: '#CCCCCC',
 				success: function(res) {
+					console.log('-----123')
 					if (res.confirm) {
+						console.log('-----123')
 						that.$http.delete('auth/session/exit', {}).then(res => {
 							uni.navigateTo({
 								url: '../login/login'
@@ -104,7 +106,7 @@ export default {
 			});
 		}
 	},
-	onLoad() {
+	onShow() {
 		this.$http.get('auth/session/me', {}).then(resp => {
 			console.log(resp['data']);
 			const data = resp['data'];

@@ -11,7 +11,7 @@
 				<view class="title">项目等级</view>
 				<picker @change="levelChange" :value="levelIndex" :range="loadOptions(projectLevels)">
 					<view class="picker">
-						{{levelIndex>-1?loadOptions(projectLevels)[levelIndex]:'选择项目登记...'}}
+						{{levelIndex>-1?loadOptions(projectLevels)[levelIndex]:'选择项目等级...'}}
 					</view>
 				</picker>
 				<text class='cuIcon-roundcheckfill text-green' v-if="dataValidate.level== true"></text>
@@ -179,6 +179,10 @@
 			},
 			inputChange(e, attribute) {
 				this.validateInput(e.detail.value, attribute);
+				this.loadSubmitAble();
+			},
+			loadSubmitAble() {
+				console.log(this.formData);
 				for(let i in this.dataValidate) {
 					if(this.dataValidate[i] == true){
 						continue;
@@ -186,40 +190,37 @@
 						this.submitAble = false;
 						return ;
 					}
-					
 				}
 				this.submitAble = true;
 			},
 			submit() {
-				this.$http.post('oa/zsMerchant', this.formData).then(resp => {
+				this.$http.post('oa/zsProject', this.formData).then(resp => {
 					uni.navigateBack({});
 				});
 			},
-			ProjectLevelsChange(e) {
-				this.projectIndex = e.detail.value
-				const selectProject = this.gender[e.detail.value];
-				for (let project in this.allProject) {
-					if(selectProject === project.name){
-						this.formData.projectId = project.id;
-						return;
-					}
-				}
-			},
 			levelChange(e) {
 				this.levelIndex = e.detail.value;
+				this.formData.level = this.projectLevels[this.levelIndex].value;
 				this.dataValidate.level = true;
+				this.loadSubmitAble();
 			},
 			typeChange(e) {
 				this.typeIndex = e.detail.value;
+				this.formData.type = this.projectTypies[this.typeIndex].value;
 				this.dataValidate.type = true;
+				this.loadSubmitAble();
 			},
 			managerChange(e) {
 				this.managerIndex = e.detail.value;
+				this.formData.managerId = this.projectManagers[this.managerIndex].value;
 				this.dataValidate.managerId = true;
+				this.loadSubmitAble();
 			},
 			industryChange(e) {
 				this.industyIndex = e.detail.value;
+				this.formData.industryType = this.projectIndusties[this.industyIndex].value;
 				this.dataValidate.industryType = true;
+				this.loadSubmitAble();
 			},
 			loadSelectors(options) {
 				let tmp = [];

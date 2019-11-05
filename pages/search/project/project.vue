@@ -85,7 +85,13 @@ export default {
 					code: '项目编号',
 					business: '业务描述',
 					createdAt: '创建时间',
-					amount: '金额'
+					'industryType.name': '行业类别',
+					'level.name': '项目级别',
+					'type.name': '项目类型',
+					amount: '投资总额',
+					areaSize: '用地面积',
+					place: '所在地',
+					'creator.username': '推荐人'
 				}
 			);
 		},
