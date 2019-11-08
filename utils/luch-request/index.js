@@ -76,7 +76,7 @@ http.interceptor.response((response) => { /* 请求之后拦截器 */
 		});
 	}else {
 		uni.navigateTo({
-			url: '../../pages/login/login',
+			url: '/pages/login/login',
 			success: (resp) => {
 				uni.clearStorage()
 			}
